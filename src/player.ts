@@ -17,7 +17,7 @@ class WgsPlayer {
     this.initCanvas()
 
     if (options.autoPLay) {
-      this.rafId = window.requestAnimationFrame(this.play)
+      this.play()
     } else {
       this.runtime.pause()
     }
@@ -78,14 +78,14 @@ class WgsPlayer {
     this.runtime.pause()
   }
 
-  play = () => {
-    if (this.runtime.is_paused()) {
-      this.runtime.resume()
+  play(): void {
+    if (this.rafId !== undefined) {
+      window.cancelAnimationFrame(this.rafId)
     }
 
-    this.tick()
+    this.runtime.resume()
 
-    this.rafId = window.requestAnimationFrame(this.play)
+    this.rafId = window.requestAnimationFrame(this.tick)
   }
 
   restart(): void {
@@ -139,8 +139,10 @@ class WgsPlayer {
     this.runtime.resize(this.canvas.width, this.canvas.height)
   }
 
-  private tick(): void {
+  private tick = (): void => {
     this.runtime.render()
+
+    this.rafId = window.requestAnimationFrame(this.tick)
   }
 }
 

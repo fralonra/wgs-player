@@ -19,27 +19,27 @@ async function main() {
 
   const modal = document.getElementById('modal')
 
-  const runtime = await createPlayer({
+  const player = await createPlayer({
     canvas: canvas as HTMLCanvasElement,
   })
 
   const config = {
     example: EXAMPLE_NAMES[0],
     pause() {
-      runtime.pause()
+      player.pause()
     },
     restart() {
-      runtime.restart()
+      player.restart()
     },
     resume() {
-      runtime.resume()
+      player.resume()
     },
     upload: async () => {
       const blob = await fileOpen({
         extensions: ['.wgs'],
       })
 
-      await runtime.loadFromBlob(blob)
+      await player.loadFromBlob(blob)
     },
   }
 
@@ -61,7 +61,7 @@ async function main() {
   function loadExample(example: string) {
     modalShow()
 
-    runtime
+    player
       .loadFromUrl(
         `${process.env.PUBLIC_PATH || ''}${BUILTIN_EXAMPLES[example]}`
       )

@@ -1,6 +1,5 @@
 # wgs-player
 
-[![Build Status](https://travis-ci.com/fralonra/wgs-player.svg?branch=master)](https://travis-ci.com/fralonra/wgs-player)
 [![npm version](https://img.shields.io/npm/v/wgs-player.svg)](https://www.npmjs.com/package/wgs-player)
 
 `wgs-player` helps you to run [`wgs`](https://github.com/fralonra/wgs) file on Web.
@@ -21,7 +20,7 @@ import { createPlayer } from 'wgs-player'
 async function main() {
   const canvas = document.getElementById('canvas')
 
-  const runtime = await createPlayer({ canvas })
+  const player = await createPlayer({ canvas })
 }
 
 main()
@@ -85,13 +84,13 @@ _method_ Load wgs data from a url. `fetchOptions` will be passed down to Fetch A
 
 `pause(): void`
 
-_method_ Pause the runtime while it's rendering.
+_method_ Pause the runtime.
 
 #### play
 
 `play(): void`
 
-_method_ Play the runtime manually. Used when `autoPlay` is set to `false`.
+_method_ Start the runtime manually. Used when `autoPlay` is set to `false`.
 
 #### restart
 
@@ -103,4 +102,4 @@ _method_ Restart the runtime.
 
 `resume(): void`
 
-_method_ Resume the runtime when it's paused.
+_method_ Resume the runtime.
