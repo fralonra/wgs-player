@@ -1,0 +1,38 @@
+{
+  "name": "wgs-player",
+  "version": "0.1.0",
+  "description": "Wgs file player for Web",
+  "keywords": [
+    "wgs",
+    "wgsl",
+    "graphics",
+    "creative-coding"
+  ],
+  "homepage": "https://github.com/fralonra/wgs-player",
+  "bugs": {
+    "url": "https://github.com/fralonra/wgs-player/issues"
+  },
+  "license": "MIT",
+  "author": "Fralonra (https://github.com/fralonra/)",
+  "files": [
+    "lib"
+  ],
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fralonra/wgs-player.git"
+  },
+  "scripts": {
+    "build": "tsc",
+    "lint": "tsc --noEmit --noUnusedLocals true --noUnusedParameters true",
+    "prepublishOnly": "npm run build",
+    "test": "npm run lint"
+  },
+  "dependencies": {
+    "wgs-runtime-wgpu": "^0.1.1"
+  },
+  "devDependencies": {
+    "typescript": "^5.1.3"
+  }
+}
