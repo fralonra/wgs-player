@@ -8,7 +8,7 @@
     "build": "webpack && cp index.html dist && cp -r examples dist"
   },
   "dependencies": {
-    "wgs-player": "file:.."
+    "wgs-player": "latest"
   },
   "devDependencies": {
     "@types/dat.gui": "^0.7.10",
