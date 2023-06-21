@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wgs Player Demo</title>
+  <style>
+    html {
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    body {
+      margin: 0;
+    }
+
+    #modal {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-color: rgba(255, 255, 255, 0.3);
+      z-index: 99;
+    }
+
+    #loading {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      margin: -25px;
+      width: 50px;
+      height: 50px;
+      border: 3px solid rgba(255, 255, 255, 0.4);
+      border-radius: 50%;
+      border-top-color: #fff;
+      animation: spin 1s ease-in-out infinite;
+    }
+
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <canvas id="canvas" style="width: 100vw; height: 100vh"></canvas>
+
+  <div id="modal" style="display: none">
+    <div id="loading"></div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+
+</html>
