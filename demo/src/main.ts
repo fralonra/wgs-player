@@ -62,7 +62,9 @@ async function main() {
     modalShow()
 
     runtime
-      .loadFromUrl(BUILTIN_EXAMPLES[example], { mode: 'no-cors' })
+      .loadFromUrl(
+        `${process.env.PUBLIC_PATH || ''}${BUILTIN_EXAMPLES[example]}`
+      )
       .finally(modalHide)
   }
 

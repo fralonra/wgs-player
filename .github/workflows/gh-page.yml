@@ -18,6 +18,7 @@ jobs:
       - name: Build
         run: |
           cd demo
+          echo PUBLIC_PATH=/wgs-player > .env
           npm install
           npm run build
 
